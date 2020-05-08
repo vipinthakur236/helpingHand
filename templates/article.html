@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>{{article.title}}</h1>
+	<small>Written by {{article.author}} on {{article.create_date}}</small>
+	<hr>
+	<div>
+		{{article.body | safe}}
+	</div>
+
+
+
+    <article>
+        <h6>
+            Post by <a> {{ article.author}} </a>
+            <span style="float:right; clear:right; ">at {{ article.create_date.strftime('%d-%m-%Y %H:%M')}}</span>
+
+        </h6>
+
+        <!-- <div class='post'>
+
+            <div style="width: 100%; display: inline-block;">
+                <h4> 
+                    <a> {{ article.body}} </a> 
+                </h4>
+
+            </div>
+        </div>
+        <hr> -->
+    </article>
+
+{% endblock %}
